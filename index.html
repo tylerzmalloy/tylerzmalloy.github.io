@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Malloy — Creative Director & Product-Minded Designer</title>
+<meta name="description" content="Tyler Malloy — Creative Director & Product-Minded Designer. UX/UI, brand, video, and product leadership.">
+<!-- EDIT ME: replace with your real domain + a real preview image (1200x630px) once hosted -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tyler Malloy — Creative Director & Product-Minded Designer">
+<meta property="og:description" content="I lead teams, set the roadmap, and ship the work myself — UX/UI, brand, video, and print.">
+<meta property="og:url" content="https://tylerzmalloy.github.io/">
+<meta property="og:image" content="https://tylerzmalloy.github.io/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tyler Malloy — Creative Director & Product-Minded Designer">
+<meta name="twitter:description" content="I lead teams, set the roadmap, and ship the work myself — UX/UI, brand, video, and print.">
+<meta name="twitter:image" content="https://tylerzmalloy.github.io/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #F6F5F1;
+    --paper-dim: #EDEBE4;
+    --ink: #16181D;
+    --ink-soft: #53565E;
+    --ink-faint: #8B8D92;
+    --blueprint: #2647FF;
+    --redline: #DA2F1E;
+    --highlighter: #FFD23F;
+    --line: #D8D5CC;
+    --line-strong: #B9B6AC;
+
+    --display: 'Space Grotesk', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --body: 'Inter', sans-serif;
+    --hand: 'Caveat', cursive;
+
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a{ color: var(--blueprint); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  [id]{ scroll-margin-top: 100px; }
+
+  :focus-visible{
+    outline: 2px solid var(--blueprint);
+    outline-offset: 3px;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width: var(--max); margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+
+  /* ---------- Ruler strip (signature motif) ---------- */
+  .ruler{
+    position: sticky; top:0; z-index: 60;
+    height: 26px;
+    background: var(--ink);
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    padding: 0 0 4px 0;
+  }
+  .ruler-track{
+    display:flex; align-items:flex-end; height:100%;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(246,245,241,0.5) 0px, rgba(246,245,241,0.5) 1px,
+      transparent 1px, transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(246,245,241,0.9) 0px, rgba(246,245,241,0.9) 1px,
+      transparent 1px, transparent 100px
+    );
+    background-position: 0 bottom, 0 bottom;
+    background-size: 100% 10px, 100% 16px;
+    background-repeat: repeat-x;
+    position: relative;
+  }
+  .ruler-label{
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(246,245,241,0.65);
+    position:absolute;
+    top: 2px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position: sticky; top: 26px; z-index: 59;
+    background: rgba(246,245,241,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    max-width: var(--max); margin: 0 auto;
+  }
+  .nav-name{
+    font-family: var(--display);
+    font-weight:700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  .nav-links{
+    display:flex; gap: 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .nav-links a{ color: var(--ink); }
+  .nav-links a:hover{ color: var(--blueprint); text-decoration: none; }
+  @media (max-width: 640px){
+    .nav-links{ gap: 16px; }
+    .nav-links span.only-desktop{ display:none; }
+  }
+
+  /* ---------- Section utility ---------- */
+  section{ padding: 96px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--redline);
+    display:flex; align-items:center; gap:8px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:7px; height:7px; border-radius:50%;
+    background: var(--redline);
+    display:inline-block;
+  }
+  .reveal{
+    opacity:0; transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view{ opacity:1; transform: translateY(0); }
+
+  /* ---------- Personality toolkit: marginalia, highlighter, doodles, stamp ---------- */
+
+  /* Handwritten margin notes — actual pen marks, not printed labels.
+     EDIT ME: swap every .marginalia text for something in your real voice. */
+  .marginalia{
+    font-family: var(--hand);
+    font-weight: 600;
+    color: var(--blueprint);
+    font-size: 22px;
+    line-height: 1;
+    display: inline-block;
+    transform: rotate(-3deg);
+  }
+  .marginalia.red{ color: var(--redline); }
+
+  /* Highlighter-marker swipe behind key phrases */
+  .hl{
+    background: var(--highlighter);
+    padding: 1px 5px;
+    border-radius: 2px 7px 3px 8px / 5px 3px 7px 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* Hand-drawn doodle underline under the hero's key word */
+  .doodle-underline{
+    position: relative;
+    display: inline-block;
+  }
+  .doodle-underline svg{
+    position: absolute;
+    left: -2%;
+    bottom: -0.14em;
+    width: 104%;
+    height: 0.22em;
+    overflow: visible;
+  }
+  .doodle-underline svg path{
+    fill: none;
+    stroke: var(--blueprint);
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+
+  /* Rotated stamp badge — like a proof/approval seal */
+  .stamp{
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--redline);
+    border: 1.5px solid var(--redline);
+    border-radius: 50%;
+    width: 96px; height: 96px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    transform: rotate(-9deg);
+    line-height: 1.35;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .stamp::before{
+    content:'';
+    position:absolute; inset: 6px;
+    border: 1px dashed var(--redline);
+    border-radius: 50%;
+    opacity: 0.55;
+  }
+  @media (max-width: 640px){
+    .stamp{ width: 72px; height: 72px; font-size: 9px; }
+  }
+
+  /* Smaller stamp variant — for pinning onto a case study visual, like a sign-off */
+  .stamp-mini{
+    font-family: var(--mono);
+    font-size: 8.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--redline);
+    border: 1.5px solid var(--redline);
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    transform: rotate(9deg);
+    line-height: 1.25;
+    position: absolute;
+    top: 14px; right: 14px;
+    background: var(--paper);
+    z-index: 2;
+  }
+
+  /* Subtle organic tilt on interactive/tactile elements — nothing is perfectly square */
+  .tag:hover{ transform: rotate(-1.5deg); transition: transform 0.15s ease; }
+  .tag-solid:hover{ transform: rotate(1.5deg); transition: transform 0.15s ease; }
+  .showcase-item:hover, .cs-process-item:hover{ transform: rotate(-0.6deg) scale(1.015); transition: transform 0.2s ease; }
+  .testi-card:nth-child(2n){ transform: rotate(0.4deg); }
+  .testi-card:nth-child(2n+1){ transform: rotate(-0.4deg); }
+  .testi-card:hover{ transform: rotate(0deg) translateY(-2px); transition: transform 0.2s ease; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding-top: 88px; }
+  .hero-tag{
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  h1{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.03;
+    letter-spacing: -0.02em;
+    margin: 0 0 26px 0;
+    max-width: 15ch;
+  }
+  h1 span{ color: var(--blueprint); }
+  .hero-sub{
+    font-family: var(--body);
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 44px 0;
+  }
+  .hero-sub strong{ color: var(--ink); font-weight:600; }
+
+  /* stat strip */
+  .stats-strip{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line-strong);
+    background: var(--paper-dim);
+  }
+  .stat{
+    padding: 22px 20px;
+    border-right: 1px solid var(--line-strong);
+    position:relative;
+  }
+  .stat:last-child{ border-right:none; }
+  .stat-num{
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 30px);
+    color: var(--ink);
+    display:flex; align-items:baseline; gap:6px;
+  }
+  .stat-num .pin{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--redline);
+    display:inline-block;
+    margin-right:2px;
+  }
+  .stat-label{
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  @media (max-width: 760px){
+    .stats-strip{ grid-template-columns: repeat(2, 1fr); }
+    .stat{ border-bottom: 1px solid var(--line-strong); }
+    .stat:nth-child(2n){ border-right:none; }
+  }
+
+  /* ---------- Capabilities ---------- */
+  .capabilities{ padding-top: 44px; padding-bottom: 44px; }
+  .cap-row{
+    display:flex; flex-wrap:wrap; gap: 10px;
+  }
+  .tag{
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px dashed var(--line-strong);
+    padding: 8px 14px;
+    color: var(--ink-soft);
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* ---------- Clients / trust strip ---------- */
+  .clients{ padding: 0 0 44px 0; }
+  .clients-label{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 16px;
+  }
+  .clients-row{
+    display:flex; flex-wrap:wrap; gap: 12px;
+  }
+  .tag-solid{
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--ink);
+    padding: 8px 14px;
+    color: var(--ink);
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* ---------- Now / About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+  }
+  .about-photo{
+    aspect-ratio: 4/5;
+    border: 1.5px dashed var(--line-strong);
+    background: repeating-linear-gradient(
+      45deg, var(--paper-dim), var(--paper-dim) 8px, var(--paper) 8px, var(--paper) 16px
+    );
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .about-photo.has-image{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+    padding: 0;
+  }
+  .about-photo.has-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  h2{
+    font-family: var(--display);
+    font-weight:600;
+    font-size: clamp(26px, 3.4vw, 36px);
+    letter-spacing: -0.01em;
+    margin: 0 0 20px 0;
+  }
+  .body-text{
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .body-text strong{ color: var(--ink); font-weight:600; }
+  .now-line{
+    margin-top: 28px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--blueprint);
+    background: var(--paper-dim);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .now-line .mono-tag{
+    display:block;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform:uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blueprint);
+    margin-bottom: 6px;
+  }
+  .arrow-mobile{ display: none; }
+  @media (max-width: 700px){
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-photo{ max-width: 220px; }
+    .arrow-desktop{ display: none; }
+    .arrow-mobile{ display: inline-block; }
+  }
+
+  /* ---------- Case studies ---------- */
+  .cs-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom: 8px; flex-wrap: wrap; gap: 10px;
+  }
+  .cs-fig{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+  .case-study{ margin-bottom: 110px; }
+  .case-study:last-child{ margin-bottom:0; }
+  .cs-title{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(26px, 3.6vw, 38px);
+    letter-spacing: -0.01em;
+    margin: 4px 0 30px 0;
+  }
+  .cs-visual{
+    aspect-ratio: 16/9;
+    border: 1.5px dashed var(--line-strong);
+    background:
+      repeating-linear-gradient(135deg, rgba(38,71,255,0.06), rgba(38,71,255,0.06) 10px, transparent 10px, transparent 20px),
+      var(--paper-dim);
+    position: relative;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .cs-visual.has-image{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+  }
+  .cs-visual.has-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cs-visual::before, .cs-visual::after{
+    content:'';
+    position:absolute; width:16px; height:16px;
+    border: 1.5px solid var(--ink-faint);
+    z-index: 3;
+  }
+  .cs-visual::before{ top:8px; left:8px; border-right:none; border-bottom:none; }
+  .cs-visual::after{ bottom:8px; right:8px; border-left:none; border-top:none; }
+  .cs-visual-label{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-align:center;
+    max-width: 320px;
+    padding: 0 16px;
+  }
+  .cs-visual-label strong{ display:block; color: var(--ink-soft); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.04em; font-size:11px; }
+
+  /* Process artifacts — secondary strip of smaller placeholders per case study */
+  .cs-process{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 44px;
+  }
+  .cs-process.two-col{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-process-item{
+    aspect-ratio: 4/3;
+    border: 1.5px dashed var(--line-strong);
+    background: var(--paper-dim);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    padding: 10px;
+    overflow: hidden;
+  }
+  .cs-process-item.has-image{
+    border: 1.5px solid var(--line-strong);
+    padding: 0;
+  }
+  .cs-process-item.has-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cs-process-item span{
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 640px){
+    .cs-process{ grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Custom asymmetric media row — for assets that don't fit a uniform grid
+     (e.g. a tall phone-screen recording next to a thin UI-detail clip) */
+  .cs-media-row{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    gap: 22px;
+    margin-bottom: 44px;
+    align-items: start;
+  }
+  .cs-media-tall{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+    overflow: hidden;
+  }
+  .cs-media-tall video{
+    width: 100%;
+    display: block;
+  }
+  .cs-media-thin{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+    overflow: hidden;
+  }
+  .cs-media-thin video{
+    width: 100%;
+    display: block;
+  }
+  .cs-media-caption{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    padding: 8px 2px 0 2px;
+  }
+  @media (max-width: 640px){
+    .cs-media-row{ grid-template-columns: 1fr; }
+    .cs-media-tall{ max-width: 260px; }
+  }
+
+  /* Full-width wide media strip — for a single artifact too wide to crop into a tile */
+  .cs-wide-media{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .cs-wide-media img{
+    width: 100%;
+    display: block;
+  }
+
+  .cs-body{ display:flex; flex-direction:column; }
+  .cs-row{
+    display:grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .cs-row:first-child{ padding-top:0; }
+  .cs-row:last-child{ border-bottom:none; padding-bottom:0; }
+  .cs-row .cs-l{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--redline);
+    padding-top: 3px;
+    border-top: 2px solid var(--redline);
+    align-self: start;
+    height: fit-content;
+  }
+  .cs-row p{ margin:0; font-size: 15.5px; color: var(--ink-soft); max-width: 66ch; }
+  .cs-row p strong{ color: var(--ink); font-weight:600; }
+
+  .cs-result{
+    display:flex; align-items:flex-start; gap: 10px;
+  }
+  .cs-result .pin{
+    width:9px; height:9px; border-radius:50%; background: var(--redline);
+    margin-top: 6px; flex-shrink:0;
+  }
+  .cs-result-text{ font-size: 15.5px; color: var(--ink); }
+  .cs-result-text .big{
+    font-family: var(--mono);
+    font-weight:600;
+    font-size: 17px;
+    color: var(--redline);
+  }
+
+  @media (max-width: 700px){
+    .cs-row{ grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+  }
+
+  /* ---------- Showcase ---------- */
+  .cat-block{ margin-bottom: 56px; }
+  .cat-block:last-child{ margin-bottom:0; }
+  .cat-head{
+    display:flex;
+    align-items:baseline;
+    gap: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--ink);
+    flex-wrap: wrap;
+  }
+  .cat-title{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .cat-count{
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cat-intro{
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin: 0 0 0 auto;
+    max-width: 46ch;
+  }
+  @media (max-width: 700px){
+    .cat-intro{ margin-left:0; }
+  }
+
+  .showcase-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .showcase-item{
+    aspect-ratio: 4/3;
+    border: 1.5px dashed var(--line-strong);
+    background: var(--paper-dim);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    padding: 14px;
+    overflow: hidden;
+  }
+  .showcase-item.has-image{
+    border: 1.5px solid var(--line-strong);
+    padding: 0;
+  }
+  .showcase-item.has-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .showcase-item span{
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 760px){
+    .showcase-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px){
+    .showcase-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* Real video embeds — full playable pieces, not decorative loops.
+     No autoplay: the visitor chooses to press play. */
+  .video-embed-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .video-embed-card{
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-dim);
+  }
+  .video-embed-wrap{
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+  }
+  .video-embed-wrap iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .video-embed-caption{
+    padding: 14px 16px;
+  }
+  .video-embed-title{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .video-embed-role{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+  }
+  @media (max-width: 700px){
+    .video-embed-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Quick case-study nav ---------- */
+  .quicknav-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .quicknav-card{
+    border: 1px solid var(--line-strong);
+    background: var(--paper-dim);
+    padding: 24px 22px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    min-height: 200px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .quicknav-card:hover{ text-decoration: none; border-color: var(--ink); transform: rotate(-0.4deg); transition: transform 0.15s ease, border-color 0.15s ease; }
+  .quicknav-tag{
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--redline);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display:block;
+    margin-bottom: 10px;
+  }
+  .quicknav-title{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .quicknav-desc{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .quicknav-stat{
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--redline);
+    margin-bottom: 18px;
+  }
+  .quicknav-cta{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blueprint);
+    display:inline-flex;
+    align-items:center;
+    gap: 6px;
+  }
+  .quicknav-card:hover .quicknav-cta{ text-decoration: underline; }
+  @media (max-width: 760px){
+    .quicknav-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testi-card{
+    border: 1px solid var(--line-strong);
+    background: var(--paper-dim);
+    padding: 28px 24px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    min-height: 260px;
+  }
+  .testi-tag{
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--redline);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display:block;
+    margin-bottom: 16px;
+  }
+  .testi-quote{
+    font-family: var(--display);
+    font-size: 16.5px;
+    line-height: 1.42;
+    color: var(--ink);
+    margin: 0 0 24px 0;
+  }
+  .testi-quote::before{
+    content: '\201C';
+    color: var(--blueprint);
+    font-size: 30px;
+    line-height: 0;
+    display: inline-block;
+    vertical-align: -7px;
+    margin-right: 3px;
+  }
+  .testi-attrib{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  .testi-attrib strong{
+    display:block;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 3px;
+    text-transform: none;
+    font-family: var(--body);
+    font-weight: 600;
+  }
+  @media (max-width: 760px){
+    .testi-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Contact / footer ---------- */
+  .contact{ text-align:left; }
+  .contact h2{ max-width: 16ch; }
+  .contact-links{
+    display:flex; flex-wrap:wrap; gap: 14px;
+    margin-top: 30px;
+  }
+  .contact-link{
+    font-family: var(--mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--ink);
+    padding: 12px 20px;
+    color: var(--ink);
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .contact-link:hover{
+    background: var(--ink); color: var(--paper); text-decoration:none;
+  }
+  .contact-link.primary{
+    background: var(--blueprint); border-color: var(--blueprint); color:#fff;
+  }
+  .contact-link.primary:hover{ background: var(--ink); border-color: var(--ink); }
+
+  footer{
+    padding: 64px 0 60px 0;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap: wrap; gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+</style>
+<noscript><style>.reveal{ opacity:1 !important; transform:none !important; }</style></noscript>
+</head>
+<body>
+
+  <div class="ruler" aria-hidden="true">
+    <div class="ruler-track" id="rulerTrack"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-name">TYLER MALLOY</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#showcase"><span class="only-desktop">More </span>Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero wrap">
+    <div class="reveal" style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <div class="hero-tag" style="margin-bottom:0;">Creative Director — Portfolio</div>
+      <!-- EDIT ME: change this if you'd rather it say something else -->
+      <div class="stamp" aria-hidden="true">CREATIVE<br>DIRECTOR<br>PORTFOLIO</div>
+    </div>
+    <h1 class="reveal">Creative Director &amp; <span class="doodle-underline">Product-Minded
+        <svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 80,12 120,6 C160,1 200,11 240,5 C260,2 280,9 298,4"/></svg>
+      </span> Designer</h1>
+    <p class="hero-sub reveal">I lead teams, set the roadmap, and <span class="hl">ship the work myself</span> — <strong>UX/UI, brand, video, and print</strong> — with the results to back it up.</p>
+
+    <!-- EDIT ME: real handwritten aside, in your own voice -->
+    <div class="reveal" style="margin-bottom:10px;">
+      <span class="marginalia">↓ the receipts</span>
+    </div>
+
+    <div class="stats-strip reveal">
+      <div class="stat">
+        <div class="stat-num"><span class="pin"></span>+<span class="count-up" data-target="54" data-suffix="%">0%</span></div>
+        <div class="stat-label">Revenue increase, PTL redesign</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="pin"></span>+<span class="count-up" data-target="57" data-suffix="%">0%</span></div>
+        <div class="stat-label">App finish-rate increase (6% → 9.4%)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="pin"></span><span class="count-up" data-target="1.3" data-decimals="1" data-suffix="M">0M</span></div>
+        <div class="stat-label">Users on redesigned platform</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="pin"></span>$<span class="count-up" data-target="119" data-suffix="K">0K</span></div>
+        <div class="stat-label">Raised, single giving campaign</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPABILITIES ================= -->
+  <section class="capabilities wrap" style="padding-top:44px; padding-bottom:44px;">
+    <div class="cap-row reveal">
+      <span class="tag">UX / UI Design</span>
+      <span class="tag">Print</span>
+      <span class="tag">Brand Identity</span>
+      <span class="tag">Video Direction</span>
+      <span class="tag">Team Leadership</span>
+      <span class="tag">Product Strategy</span>
+      <span class="tag">Campaign Design</span>
+    </div>
+
+    <!-- EDIT ME: adjust this list to the orgs/clients you actually want listed -->
+    <div class="clients-label reveal" style="margin-top:36px;">Selected Clients &amp; Organizations</div>
+    <div class="clients-row reveal">
+      <span class="tag-solid">Pocket Testament League</span>
+      <span class="tag-solid">Chessly</span>
+      <span class="tag-solid">Greenville University / Core Education</span>
+      <span class="tag-solid">Chi Alpha</span>
+      <span class="tag-solid">Wendy's — Cayman Islands</span>
+    </div>
+  </section>
+
+  <!-- ================= QUICK CASE-STUDY NAV ================= -->
+  <section id="quicknav" class="wrap">
+    <div class="eyebrow reveal">Jump To</div>
+    <h2 class="reveal" style="margin-bottom:36px;">Three case studies, thirty seconds.</h2>
+    <div class="quicknav-grid reveal">
+      <a class="quicknav-card" href="#case-chessly">
+        <div>
+          <span class="quicknav-tag">FIG.01 — Product / UX</span>
+          <div class="quicknav-title">Chessly</div>
+          <p class="quicknav-desc">Homepage &amp; platform redesign to drive subscriptions and gamify chess learning.</p>
+          <div class="quicknav-stat">450K → 1.3M users</div>
+        </div>
+        <span class="quicknav-cta">See how I did it →</span>
+      </a>
+      <a class="quicknav-card" href="#case-gu">
+        <div>
+          <span class="quicknav-tag">FIG.02 — Leadership / Enrollment</span>
+          <div class="quicknav-title">Greenville University</div>
+          <p class="quicknav-desc">Rebuilt a university's creative function and redesigned its application.</p>
+          <div class="quicknav-stat">+57% app finish rate</div>
+        </div>
+        <span class="quicknav-cta">See how I did it →</span>
+      </a>
+      <a class="quicknav-card" href="#case-ptl">
+        <div>
+          <span class="quicknav-tag">FIG.03 — Web / Brand / Video</span>
+          <div class="quicknav-title">Pocket Testament League</div>
+          <p class="quicknav-desc">Full web redesign plus a national mission film for a nonprofit.</p>
+          <div class="quicknav-stat">+54% revenue</div>
+        </div>
+        <span class="quicknav-cta">See how I did it →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT / NOW ================= -->
+  <section id="about" class="wrap">
+    <div class="eyebrow reveal">About</div>
+    <div class="about-grid reveal">
+      <!-- Headshot -->
+      <div class="about-photo has-image">
+        <img src="images/headshot.jpg" alt="Portrait of Tyler Malloy">
+      </div>
+      <div>
+        <!-- EDIT ME: real handwritten aside, in your own voice, or delete this div entirely -->
+        <span class="marginalia arrow-desktop" style="margin-bottom:10px;">← hi, it's me</span>
+        <span class="marginalia arrow-mobile" style="margin-bottom:10px;">hi, it's me ↑</span>
+        <p class="body-text">Tyler Malloy is a Creative Director who moves fluidly between leading teams and doing the work himself — across <strong>UX/UI, print, digital, and graphic design</strong>, brand strategy, video, and product roadmaps. He's directed national ad campaigns, redesigned platforms used by over a million people, and helped rebuild a university's marketing function from the ground up.</p>
+        <p class="body-text" style="margin-top:16px;">Whether it's a wireframe, a print piece, a video shoot, or a team's creative roadmap, Tyler's range is the constant.</p>
+
+        <div class="now-line">
+          <span class="mono-tag">→ Currently</span>
+          Directing creative for Core Education / Greenville University — leading a team across brand, campaign, and web, and open to new creative leadership and product design roles.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ================= -->
+  <section id="work" class="wrap">
+    <div class="eyebrow reveal">Selected Work</div>
+    <h2 class="reveal" style="margin-bottom:60px;">Three problems, three very different rooms to solve them in.</h2>
+
+    <!-- CASE STUDY 1 — Chessly -->
+    <article class="case-study reveal" id="case-chessly">
+      <div class="cs-head">
+        <span class="cs-fig">FIG.01 — PRODUCT / UX</span>
+      </div>
+      <h3 class="cs-title">Chessly — Homepage &amp; Platform Redesign</h3>
+
+      <!-- Chessly homepage hero mockup -->
+      <div class="cs-visual has-image">
+        <span class="stamp-mini" aria-hidden="true">SHIPPED<br>&amp; LOVED<br>IT</span>
+        <img src="images/chessly-hero.jpg" alt="Chessly homepage redesign shown in a browser mockup, featuring GothamChess and the site's new value proposition">
+      </div>
+
+      <!-- Process artifacts: hand-drawn sketch + gamification dashboard detail -->
+      <div class="cs-process two-col">
+        <div class="cs-process-item has-image"><img src="images/chessly-sketch.jpg" alt="Hand-drawn early wireframe sketch for the Chessly homepage layout"></div>
+        <div class="cs-process-item has-image"><img src="images/chessly-gamification.jpg" alt="Chessly dashboard showing rank progress, monthly challenge, and leaderboard position"></div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-row"><span class="cs-l">Goal</span><p>Design a homepage and platform that increases subscription conversion and gamifies chess learning to improve retention.</p></div>
+        <div class="cs-row"><span class="cs-l">Problem</span><p>The homepage failed to communicate Chessly's core value — learning from GothamChess, the world's largest chess YouTuber. The site felt insider-focused, confusing, and hard to navigate.</p></div>
+        <div class="cs-row"><span class="cs-l">Approach</span><p>Sketched a full layout redesign leading with a hero section featuring Levy and a clear value proposition. Partnered with the Chessly team to identify conversion-driving content — reviews, average ELO increase, time in platform — then built working mockups in Figma.</p></div>
+        <div class="cs-row"><span class="cs-l">Solution</span><p>A modern, conversion-focused homepage plus updated platform UX, including gamified elements: points, puzzles, and a leaderboard.</p></div>
+      </div>
+
+      <div class="cs-result" style="margin-top:34px;">
+        <span class="pin"></span>
+        <div class="cs-result-text">Chessly's user base grew from ~450K to <span class="big">1.3M</span> following implementation. As a contract designer, Tyler wasn't part of post-launch measurement — this is framed as strong directional evidence, backed by the before/after design work itself.</div>
+      </div>
+      <!-- EDIT ME: real handwritten aside, in your own voice, or delete this div entirely -->
+      <div style="margin-top:14px;"><span class="marginalia">→ still my favorite redesign</span></div>
+    </article>
+
+    <!-- CASE STUDY 2 — Greenville University / Core Education -->
+    <article class="case-study reveal" id="case-gu">
+      <div class="cs-head">
+        <span class="cs-fig">FIG.02 — LEADERSHIP / ENROLLMENT</span>
+      </div>
+      <h3 class="cs-title">Greenville University / Core Education — Creative Leadership &amp; Application Redesign</h3>
+
+      <!-- GU application before/after -->
+      <div class="cs-visual has-image">
+        <img src="images/gu-application-before-after.jpg" alt="Before and after comparison of the Greenville University application, showing the redesigned progress indicator and simplified fields, with the completion rate increasing 57 percent">
+      </div>
+
+      <!-- Application progress-bar demo: full form-fill recording + zoomed-in progress bar detail -->
+      <div class="cs-media-row">
+        <div>
+          <div class="cs-media-tall">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="images/gu-form-fill.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="cs-media-caption">Application flow — form + progress bar</div>
+        </div>
+        <div>
+          <div class="cs-media-thin">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="images/gu-progress-bar.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="cs-media-caption">Progress-bar detail as the form nears completion</div>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-row"><span class="cs-l">Goal</span><p>Rebuild how marketing functioned at Greenville University — from a reactive request-filler into a real strategic function — while directly supporting enrollment and fundraising during a period of financial pressure.</p></div>
+        <div class="cs-row"><span class="cs-l">Problem</span><p>The university's brand was inconsistently represented across poor-quality materials, with no clear "GU story." Marketing operated as an internal job shop rather than a strategic team. The application process itself — the most critical conversion point — was clunky, overly long, and actively losing prospective students.</p></div>
+        <div class="cs-row"><span class="cs-l">Approach</span><p>As creative lead, restructured how the creative team operates — directing a team across content, copy, and campaigns — while personally owning web, high-priority video, and campaign design. Took direct ownership of the application redesign: simplifying fields, removing friction, adding progress indicators and smart fields, and implementing tracking that hadn't existed before.</p></div>
+        <div class="cs-row"><span class="cs-l">Solution</span><p>A modernized application experience and a more strategically-run creative function overall — including leading all creative for the university's biannual "Big Give" campaign.</p></div>
+      </div>
+
+      <div class="cs-result" style="margin-top:34px;">
+        <span class="pin"></span>
+        <div class="cs-result-text">Application completion rose from <span class="big">6% to 9.4%</span> — a substantial lift for a university application. Creative and marketing leadership contributed to the <span class="big">two highest incoming classes</span> in school history, and directly supported fundraising, including <span class="big">$119K</span> raised in a single Big Give campaign.</div>
+      </div>
+      <!-- EDIT ME: real handwritten aside, in your own voice, or delete this div entirely -->
+      <div style="margin-top:14px;"><span class="marginalia red">↑ one progress bar did that</span></div>
+    </article>
+
+    <!-- CASE STUDY 3 — Pocket Testament League -->
+    <article class="case-study reveal" id="case-ptl">
+      <div class="cs-head">
+        <span class="cs-fig">FIG.03 — WEB / BRAND / VIDEO</span>
+      </div>
+      <h3 class="cs-title">Pocket Testament League — Web Redesign &amp; National Video Campaign</h3>
+
+      <!-- PTL homepage hero mockup -->
+      <div class="cs-visual has-image">
+        <img src="images/ptl-hero.jpg" alt="Pocket Testament League homepage redesign shown in a browser mockup">
+      </div>
+
+      <!-- Process artifacts: regional giving page + video still -->
+      <div class="cs-process two-col">
+        <div class="cs-process-item has-image"><img src="images/ptl-giving-page.jpg" alt="Eastern Europe regional giving page from the PTL website redesign"></div>
+        <div class="cs-process-item has-image"><img src="images/ptl-video-still.jpg" alt="Still from the national mission video, showing a man in an emotional moment during an outdoor gathering"></div>
+      </div>
+
+      <!-- UX critique notes — real annotated feedback on the donation flow -->
+      <div class="cs-wide-media">
+        <img src="images/ptl-ux-critique.jpg" alt="Handwritten UX critique notes annotating the PTL donation and checkout flow">
+      </div>
+      <div class="cs-media-caption" style="margin-bottom:36px;">Early UX critique notes — donation &amp; checkout flow</div>
+
+      <div class="cs-body">
+        <div class="cs-row"><span class="cs-l">Goal</span><p>Modernize Pocket Testament League's digital presence end-to-end and produce a flagship video to drive mission awareness and giving.</p></div>
+        <div class="cs-row"><span class="cs-l">Problem</span><p>PTL's website, UX/UI, and campaign creative all lagged well behind what a modern nonprofit needed — unstructured, dated, and not built around how donors actually decide to give.</p></div>
+        <div class="cs-row"><span class="cs-l">Approach</span><p>Conducted market research into nonprofit sites that successfully balanced mission storytelling with strong UX/UI, and found a consistent pattern: donors want to <em>see</em> their impact, not just read about it. Applied that insight directly — including a homepage graph visualizing giving growth year over year — and designed individual giving pages for each world region PTL serves, alongside a general giving page, to make the ask more specific and personal.</p></div>
+        <div class="cs-row"><span class="cs-l">Solution</span><p>A full site redesign (structure, UX/UI, giving pages) plus a $10K+ national video — an emotionally-driven mission film designed to make viewers feel part of the cause.</p></div>
+      </div>
+
+      <div class="cs-result" style="margin-top:34px;">
+        <span class="pin"></span>
+        <div class="cs-result-text"><span class="big">54% increase</span> in revenue following the redesign. The video became a staple asset in PTL's ongoing mission updates and campaigns, directly influencing giving, and was praised by leadership for both production quality and results.</div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <!-- EDIT ME: replace every quote and attribution below with real ones. Placeholder quotes are intentionally generic — do not leave them in. -->
+  <section id="testimonials" class="wrap">
+    <div class="eyebrow reveal">In Their Words</div>
+    <div class="reveal" style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:36px;">
+      <h2 style="margin-bottom:0;">Don't just take it from me.</h2>
+      <span class="marginalia" style="font-size:19px;">(these are real)</span>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div>
+          <span class="testi-tag">FIG.01 — Chessly</span>
+          <p class="testi-quote">PLACEHOLDER — a quote from someone on the Chessly team about the redesign, the collaboration, or the results.</p>
+        </div>
+        <div class="testi-attrib"><strong>Name Placeholder</strong>Title, Chessly</div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <span class="testi-tag">FIG.02 — Greenville University</span>
+          <p class="testi-quote">PLACEHOLDER — a quote from GU/Core Education leadership about the application redesign or creative leadership.</p>
+        </div>
+        <div class="testi-attrib"><strong>Name Placeholder</strong>Title, Core Education / Greenville University</div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <span class="testi-tag">FIG.03 — Pocket Testament League</span>
+          <p class="testi-quote">PLACEHOLDER — a quote from PTL leadership about the web redesign or the national video.</p>
+        </div>
+        <div class="testi-attrib"><strong>Name Placeholder</strong>Title, Pocket Testament League</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHOWCASE ================= -->
+  <section id="showcase" class="wrap">
+    <div class="eyebrow reveal">More Work</div>
+    <h2 class="reveal" style="margin-bottom:44px;">A wider look at the craft — by medium.</h2>
+
+    <!-- EDIT ME: mini intro lines are placeholders — swap in your own voice/specifics -->
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <span class="cat-title">Print</span>
+        <span class="cat-count">FIG. 04–07</span>
+        <p class="cat-intro">Campaign materials, publications, and collateral designed for national nonprofit and higher-ed audiences.</p>
+      </div>
+      <div class="showcase-grid">
+        <!-- IMAGE PLACEHOLDERS: print work -->
+        <div class="showcase-item has-image"><img src="images/greenville-record.jpg" alt="The Record alumni magazine for Greenville University, held outdoors"></div>
+        <div class="showcase-item has-image"><img src="images/ptl-booklet.jpg" alt="'Made in His Image' Gospel of John booklet, styled mockup on a wall"></div>
+        <div class="showcase-item has-image"><img src="images/gu-guidebook.jpg" alt="Greenville University scholarships brochure and student guidebook, print mockup"></div>
+        <div class="showcase-item has-image"><img src="images/ptl-tract.jpg" alt="The Gospel of John tract held up outdoors in winter"></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <span class="cat-title">Video</span>
+        <span class="cat-count">FIG. 08–09</span>
+        <p class="cat-intro">Directed, shot, and produced — from a personal passion project to a university event recap.</p>
+      </div>
+      <div class="video-embed-grid">
+        <div class="video-embed-card">
+          <div class="video-embed-wrap">
+            <iframe src="https://player.vimeo.com/video/1224252741?title=0&byline=0&portrait=0" title="Special Announcement" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-embed-caption">
+            <div class="video-embed-title">Special Announcement</div>
+            <div class="video-embed-role">Creative Director · Cinematographer · Producer</div>
+          </div>
+        </div>
+        <div class="video-embed-card">
+          <div class="video-embed-wrap">
+            <iframe src="https://player.vimeo.com/video/1224253842?title=0&byline=0&portrait=0" title="NSO Welcome Weekend — Greenville University" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-embed-caption">
+            <div class="video-embed-title">NSO Welcome Weekend — Greenville University</div>
+            <div class="video-embed-role">Creative Director · Producer · Lead Cinematographer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <span class="cat-title">Brand Identity</span>
+        <span class="cat-count">FIG. 11–14</span>
+        <p class="cat-intro">Logo, identity, and visual systems built for organizations across nonprofit, education, and consumer work.</p>
+      </div>
+      <div class="showcase-grid">
+        <!-- IMAGE PLACEHOLDERS: brand identity work -->
+        <div class="showcase-item has-image"><img src="images/brand-league-ego.jpg" alt="League Ego brand identity and style guide"></div>
+        <div class="showcase-item has-image"><img src="images/brand-war-drum.jpg" alt="War Drum Mixing Studios logo"></div>
+        <div class="showcase-item has-image"><img src="images/brand-endwell-logo.jpg" alt="Endwell Chiropractic logo"></div>
+        <div class="showcase-item has-image"><img src="images/brand-xx-mark.jpg" alt="XX brand mark with red and black diagonal pattern"></div>
+      </div>
+    </div>
+
+    <div class="cat-block reveal">
+      <div class="cat-head">
+        <span class="cat-title">UX / Digital</span>
+        <span class="cat-count">FIG. 15–17</span>
+        <p class="cat-intro">Web and product design work beyond the featured case studies — layouts, systems, and interfaces.</p>
+      </div>
+      <div class="showcase-grid">
+        <!-- IMAGE PLACEHOLDERS: additional UX/digital work -->
+        <div class="showcase-item has-image"><img src="images/lakeview-lodge.jpg" alt="Lakeview Green Lodge website shown across laptop, tablet, and phone"></div>
+        <div class="showcase-item has-image"><img src="images/mrmurphys.jpg" alt="Mr. Murphy's Stuffed Potatoes food truck website homepage"></div>
+        <div class="showcase-item has-image"><img src="images/endwell-website.jpg" alt="Endwell Chiropractic website homepage"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="wrap contact">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Let's talk about what you're building.</h2>
+    <p class="body-text reveal">Open to creative leadership and product design roles — reach out directly, or find me on LinkedIn.</p>
+    <div class="contact-links reveal">
+      <!-- PLACEHOLDER: update email -->
+      <a class="contact-link primary" href="mailto:tyler.z.malloy@gmail.com">Email — tyler.z.malloy@gmail.com</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/tyler-malloy/" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- PLACEHOLDER: resume PDF link -->
+      <a class="contact-link" href="#">Download Résumé (PDF)</a>
+    </div>
+    <!-- EDIT ME: real handwritten aside, in your own voice, or delete this div entirely -->
+    <div class="reveal" style="margin-top:28px; margin-bottom:8px;"><span class="marginalia">seriously, say hi ↑</span></div>
+  </section>
+
+  <footer class="wrap">
+    <div>© <span id="year"></span> Tyler Malloy</div>
+    <!-- EDIT ME: swap for a closing line that actually sounds like you -->
+    <div>Creative Director — built this myself, naturally</div>
+  </footer>
+
+<script>
+  // Every block below is isolated in its own try/catch so a failure in
+  // one (old browser, unsupported method, etc.) can never block another —
+  // most importantly, content must always end up visible.
+
+  // Ruler tick labels
+  try{
+    var track = document.getElementById('rulerTrack');
+    var width = window.innerWidth;
+    var count = Math.ceil(width / 100) + 1;
+    for(var i=0;i<count;i++){
+      var n = String(i*100);
+      while(n.length < 3){ n = '0' + n; } // zero-pad without padStart, for older engines
+      var label = document.createElement('div');
+      label.className = 'ruler-label';
+      label.style.left = (i*100 + 4) + 'px';
+      label.textContent = n;
+      track.appendChild(label);
+    }
+  } catch(e){ /* ruler is purely decorative — safe to skip */ }
+
+  // Scroll reveal — content must always end up visible, no matter what.
+  try{
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      for(var r=0; r<els.length; r++){ els[r].classList.add('in-view'); }
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      for(var o=0; o<els.length; o++){ io.observe(els[o]); }
+    }
+  } catch(e){
+    var fallbackEls = document.querySelectorAll('.reveal');
+    for(var f=0; f<fallbackEls.length; f++){ fallbackEls[f].classList.add('in-view'); }
+  }
+
+  // Absolute safety net regardless of the above: guarantee visibility.
+  setTimeout(function(){
+    var all = document.querySelectorAll('.reveal');
+    for(var a=0; a<all.length; a++){ all[a].classList.add('in-view'); }
+  }, 1400);
+
+  // Count-up stats
+  try{
+    var nums = document.querySelectorAll('.count-up');
+    if('IntersectionObserver' in window){
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            animateCount(entry.target);
+            io2.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      for(var c=0; c<nums.length; c++){ io2.observe(nums[c]); }
+    } else {
+      for(var c2=0; c2<nums.length; c2++){ animateCount(nums[c2]); }
+    }
+  } catch(e){ /* stats will simply show their static starting text */ }
+
+  function animateCount(el){
+    try{
+      var target = parseFloat(el.getAttribute('data-target'));
+      var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1100;
+      var start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = (target * eased).toFixed(decimals) + suffix;
+        if(progress < 1){ requestAnimationFrame(step); }
+        else { el.textContent = target.toFixed(decimals) + suffix; }
+      }
+      requestAnimationFrame(step);
+    } catch(e){ /* leave static text as-is */ }
+  }
+
+  try{ document.getElementById('year').textContent = new Date().getFullYear(); }
+  catch(e){ /* footer year is cosmetic */ }
+</script>
+
+</body>
+</html>
