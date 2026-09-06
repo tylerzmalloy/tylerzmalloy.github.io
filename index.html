@@ -537,6 +537,19 @@
     object-fit: cover;
     display: block;
   }
+  .cs-process-item.has-video{
+    border: 1.5px solid var(--line-strong);
+    padding: 0;
+    position: relative;
+  }
+  .cs-process-item.has-video iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
   .cs-process-item span{
     font-family: var(--mono);
     font-size: 10.5px;
@@ -694,6 +707,18 @@
     border: 1.5px solid var(--line-strong);
     padding: 0;
   }
+  /* Fallback for tiles using the older flat structure (img direct child,
+     no .showcase-image wrapper) so they still get proper sizing */
+  .showcase-item.has-image > img{
+    aspect-ratio: 4/3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .showcase-item.has-image.contain > img{
+    object-fit: contain;
+  }
   .showcase-image{
     aspect-ratio: 4/3;
     overflow: hidden;
@@ -703,6 +728,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  /* Modifier: show the full image with no cropping (letterboxed if needed) */
+  .showcase-image.contain img,
+  .cs-visual.has-image.contain img{
+    object-fit: contain;
   }
   .showcase-item span{
     font-family: var(--mono);
@@ -762,6 +792,33 @@
   }
   @media (max-width: 700px){
     .video-embed-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* UX/Digital tiles: same title + meta-line pattern as the video cards,
+     with the meta line acting as a link out to the live site */
+  .ux-caption{
+    padding: 14px 16px;
+  }
+  .ux-name{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .ux-visit{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--blueprint);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .ux-visit:hover{ text-decoration: underline; }
+  .ux-visit.disabled{
+    color: var(--ink-faint);
   }
 
   /* ---------- Quick case-study nav ---------- */
@@ -1070,7 +1127,7 @@
       <h3 class="cs-title">Chessly — Homepage &amp; Platform Redesign</h3>
 
       <!-- Chessly homepage hero mockup -->
-      <div class="cs-visual has-image">
+      <div class="cs-visual has-image contain">
         <span class="stamp-mini" aria-hidden="true">SHIPPED<br>&amp; LOVED<br>IT</span>
         <img src="images/chessly-hero.jpg" alt="Chessly homepage redesign shown in a browser mockup, featuring GothamChess and the site's new value proposition">
       </div>
@@ -1140,7 +1197,7 @@
         <div class="cs-result-text">Application completion rose from <span class="big">6% to 9.4%</span> — a substantial lift for a university application. Creative and marketing leadership contributed to the <span class="big">two highest incoming classes</span> in school history, and directly supported fundraising, including <span class="big">$119K</span> raised in a single Big Give campaign.</div>
       </div>
       <!-- EDIT ME: real handwritten aside, in your own voice, or delete this div entirely -->
-      <div style="margin-top:14px;"><span class="marginalia red">↑ one progress bar did that</span></div>
+      <div style="margin-top:14px;"><span class="marginalia red">↑ fewer fields, more finishers</span></div>
     </article>
 
     <!-- CASE STUDY 3 — Pocket Testament League -->
@@ -1158,7 +1215,7 @@
       <!-- Process artifacts: regional giving page + video still -->
       <div class="cs-process two-col">
         <div class="cs-process-item has-image"><img src="images/ptl-giving-page.jpg" alt="Eastern Europe regional giving page from the PTL website redesign"></div>
-        <div class="cs-process-item has-image"><img src="images/ptl-video-still.jpg" alt="Still from the national mission video, showing a man in an emotional moment during an outdoor gathering"></div>
+        <div class="cs-process-item has-video"><iframe src="https://www.youtube.com/embed/WN5ONQHGSFg" title="Pocket Testament League national mission video" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
       </div>
 
       <!-- UX critique notes — real annotated feedback on the donation flow -->
@@ -1182,9 +1239,10 @@
   </section>
 
   <!-- ================= TESTIMONIALS ================= -->
+  <!-- TEMPORARILY DISABLED: still gathering real testimonials. Remove the
+       style="display:none;" below to bring this section back once quotes are in. -->
   <!-- EDIT ME: replace every quote and attribution below with real ones. Placeholder quotes are intentionally generic — do not leave them in. -->
-  <!--
-  <section id="testimonials" class="wrap">
+  <section id="testimonials" class="wrap" style="display:none;">
     <div class="eyebrow reveal">In Their Words</div>
     <div class="reveal" style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:36px;">
       <h2 style="margin-bottom:0;">Don't just take it from me.</h2>
@@ -1213,7 +1271,7 @@
         <div class="testi-attrib"><strong>Name Placeholder</strong>Title, Pocket Testament League</div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- ================= SHOWCASE ================= -->
   <section id="showcase" class="wrap">
@@ -1229,24 +1287,33 @@
         <p class="cat-intro">Web and product design work beyond the featured case studies — layouts, systems, and interfaces.</p>
       </div>
       <div class="showcase-grid">
-        <!-- IMAGE PLACEHOLDERS: additional UX/digital work -->
+        <!-- Featured UX/Digital work, linking out to the live sites -->
         <div class="showcase-item has-image">
           <div class="showcase-image">
             <img src="images/lakeview-lodge.jpg" alt="Lakeview Green Lodge website shown across laptop, tablet, and phone">
           </div>
-          <div class="cs-media-caption"><a target="_blank" rel="external" href="https://lakeviewgreenlodge.com">Visit Site: Lakeview Green Lodge</a></div>
+          <div class="ux-caption">
+            <div class="ux-name">Lakeview Green Lodge</div>
+            <a class="ux-visit" target="_blank" rel="noopener" href="https://lakeviewgreenlodge.com">Visit site →</a>
+          </div>
         </div>
         <div class="showcase-item has-image">
           <div class="showcase-image">
             <img src="images/mrmurphys.jpg" alt="Mr. Murphy's Stuffed Potatoes food truck website homepage">
           </div>
-          <div class="cs-media-caption"><a target="_blank" rel="external" href="https://foodpartycomo.com">Visit Site: Mr. Murphy's Stuffed Potatoes</a></div>
+          <div class="ux-caption">
+            <div class="ux-name">Mr. Murphy's Stuffed Potatoes</div>
+            <a class="ux-visit" target="_blank" rel="noopener" href="https://foodpartycomo.com">Visit site →</a>
+          </div>
         </div>
         <div class="showcase-item has-image">
           <div class="showcase-image">
             <img src="images/endwell-website.jpg" alt="Endwell Chiropractic website homepage">
           </div>
-          <div class="cs-media-caption">Endwell Chiropractic Site Launch Coming Soon!</div>
+          <div class="ux-caption">
+            <div class="ux-name">Endwell Chiropractic</div>
+            <span class="ux-visit disabled">Site launching soon</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1262,7 +1329,7 @@
         <div class="showcase-item has-image"><img src="images/greenville-record.jpg" alt="The Record alumni magazine for Greenville University, held outdoors"></div>
         <div class="showcase-item has-image"><img src="images/ptl-booklet.jpg" alt="'Made in His Image' Gospel of John booklet, styled mockup on a wall"></div>
         <div class="showcase-item has-image"><img src="images/gu-guidebook.jpg" alt="Greenville University scholarships brochure and student guidebook, print mockup"></div>
-        <div class="showcase-item has-image"><img src="images/ptl-tract.jpg" alt="The Gospel of John tract held up outdoors in winter"></div>
+        <div class="showcase-item has-image contain"><img src="images/ptl-tract.jpg" alt="The Gospel of John tract held up outdoors in winter"></div>
       </div>
     </div>
 
